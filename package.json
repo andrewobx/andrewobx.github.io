@@ -1,0 +1,28 @@
+{
+  "name": "andrewobx.github.io",
+  "version": "0.0.1",
+  "description": "Andrew Obiano's personal website!",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewobx/andrewobx.github.io.git"
+  },
+  "keywords": [
+    "andrew",
+    "obiano"
+  ],
+  "author": "Andrew Obiano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewobx/andrewobx.github.io/issues"
+  },
+  "homepage": "https://github.com/andrewobx/andrewobx.github.io#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
+  }
+}
