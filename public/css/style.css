@@ -87,3 +87,15 @@ a {
   opacity: 0.85;
   color: #000000;
   background-color: rgba(190, 190, 190, 0.25); }
+
+.description {
+  display: none; }
+
+.learnMore {
+  justify-content: center; }
+
+.learnMore:focus .description {
+  display: block; }
+
+.learnMore:focus .GLTlink {
+  display: none; }
