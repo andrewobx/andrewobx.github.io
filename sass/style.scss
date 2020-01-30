@@ -64,6 +64,7 @@ a {
 
 .GLTlink {
   justify-content: center;
+  display: flex;
 }
 
 .button {
@@ -109,12 +110,20 @@ a {
 
 .learnMore {
   justify-content: center;
+  max-width: 217px;
+  height: 51px;
+  transition: 0.3s all linear;
+}
+
+.learnMore:focus {
+  height: 150px;
+  overflow-y: scroll;
 }
 
 .learnMore:focus .description {
   display: block;
 }
 
-.learnMore:focus .GLTlink {
+.learnMore:focus .learnMoreTitle {
   display: none;
 }
