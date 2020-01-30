@@ -20,6 +20,22 @@ a {
   color: black;
   text-decoration: none; }
 
+svg {
+  height: 35px;
+  width: 34px; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+#github {
+  fill: #181717; }
+
+#linkedin {
+  fill: #0077b5; }
+
+#twitter {
+  fill: #1da1f2; }
+
 .hero {
   height: 100vh;
   width: 100vw;
@@ -50,16 +66,14 @@ a {
   border: none;
   vertical-align: middle; }
 
-.GLTlink {
-  justify-content: center; }
-
 .button {
   padding: 7px 10px 7px 10px;
   line-height: 35px;
   height: 51px;
   min-width: 217px;
   text-decoration: none;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   color: #000000;
   background-color: #ffffff;
   border-radius: 5px;
@@ -87,3 +101,26 @@ a {
   opacity: 0.85;
   color: #000000;
   background-color: rgba(190, 190, 190, 0.25); }
+
+.description {
+  display: none;
+  overflow: hidden; }
+
+.aboutMe {
+  justify-content: center;
+  width: 217px;
+  height: 51px;
+  transition: 0.3s all ease-in-out;
+  overflow: hidden; }
+
+.aboutMe:focus {
+  height: 50vh;
+  width: 50vw;
+  overflow: hidden; }
+
+.aboutMe:focus .description {
+  display: block;
+  overflow-y: scroll; }
+
+.aboutMe:focus .aboutMeIcon {
+  display: none; }
