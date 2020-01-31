@@ -36,6 +36,9 @@ svg {
 #twitter {
   fill: #1da1f2; }
 
+#gmail {
+  fill: #d14836; }
+
 .hero {
   height: 100vh;
   width: 100vw;
@@ -53,10 +56,12 @@ svg {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column; }
+      flex-direction: column;
+      height: 100%;
+      width: 100%; }
 
 .nametag {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-top: 5vh; }
 
 .button img {
