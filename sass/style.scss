@@ -13,6 +13,7 @@ html {
 body {
   margin: 0;
   font-family: "Playfair Display", sans-serif;
+  overflow-y: scroll;
 }
 
 ul {
@@ -46,6 +47,10 @@ svg {
   fill: #1da1f2;
 }
 
+#gmail {
+  fill: #d14836;
+}
+
 .hero {
   height: 100vh;
   width: 100vw;
@@ -66,13 +71,15 @@ svg {
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      margin: 0;
+      height: 100%;
+      width: 100%;
     }
   }
 }
 
 .nametag {
-  font-size: 2rem;
-  margin-top: 5vh;
+  font-size: 1.75rem;
 }
 
 .button img {
@@ -103,6 +110,11 @@ svg {
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -o-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .button:hover,
@@ -111,31 +123,38 @@ svg {
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
   text-decoration: none;
   box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
-  opacity: 0.85;
-  color: #000000;
-  background-color: rgba(190, 190, 190, 0.25);
+
+  svg {
+    transform: scale(1.2);
+  }
 }
 
 .description {
   display: none;
   overflow: hidden;
   padding: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  p {
+    margin-top: 10px;
+  }
 }
 
 .aboutMe {
   justify-content: center;
   width: 217px;
   height: 51px;
-  -o-transition: width 0s, height 0.3s ease-in-out;
-  -webkit-transition: width 0s, height 0.3s ease-in-out;
-  -moz-transition: width 0s, height 0.3s ease-in-out;
-  -ms-transition: width 0s, height 0.3s ease-in-out;
-  transition: width 0s, height 0.3s ease-in-out;
+  -o-transition: width 0s, height 0.3s ease-in-out !important;
+  -webkit-transition: width 0s, height 0.3s ease-in-out !important;
+  -moz-transition: width 0s, height 0.3s ease-in-out !important;
+  -ms-transition: width 0s, height 0.3s ease-in-out !important;
+  transition: width 0s, height 0.3s ease-in-out !important;
   overflow: hidden;
 }
 
 .aboutMe:focus {
-  height: 151px;
+  height: 191px;
   width: 70vw;
   overflow: hidden;
 }
@@ -154,5 +173,10 @@ svg {
     height: 50vh;
     width: 85vw;
     font-size: 1rem;
+    margin-top: 10vh;
+  }
+
+  .nametag {
+    display: none;
   }
 }
