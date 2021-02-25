@@ -6,8 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Andrew Obiano</title>
     <link rel="stylesheet" href="public/css/style.css" />
+    <script src="amazon-connect-chat-interface.js"></script>
   </head>
   <body>
+    <script>
+        $(document).ready((a) => {
+            connect.ChatInterface.init({
+                containerId: 'amazon-chat',
+                headerConfig: {
+                    isHTML: true,
+                    render: () => {
+                        return  (`
+                            <div class="header-wrapper">
+                                <h2 class="welcome-text">Chat Demo</h2>
+                                <p id="chatDescription">You can modify this header or use the default.</p>
+                            </div>
+                        `)
+                    }
+                }
+            });
+        });
+
+        $(function () {
+            $('#contactDetails').submit(function (e) {
+                e.preventDefault();
+                var enableAttachments = "${enableAttachments}";
+                var customerName = $('#firstName').val();
+                var username = $('#username').val();
+                if (!customerName || !username) {
+                    alert('you must enter a name & username');
+                    document.getElementById("contactDetails").reset();
+                } else {
+
+                    console.log("this is the first name:" + customerName);
+                    console.log("this is the username: " + username);
+                    document.getElementById("contactDetails").reset();
+                    connect.ChatInterface.initiateChat({
+                        name: customerName,
+                        username: username,
+                        region: "${region}",
+                        apiGatewayEndpoint: "https://${apiId}.execute-api.${region}.amazonaws.com/Prod",
+                        contactAttributes: JSON.stringify({
+                            "customerName": customerName
+                        }),
+                        contactFlowId: "${contactFlowId}",
+                        instanceId: "${instanceId}",
+                        featurePermissions: {
+                            "ATTACHMENTS": enableAttachments==='true',  // this is the override flag from user for attachments
+                        }
+                    },successHandler, failureHandler);
+
+                    $('#firstName').blur();
+                    $('#username').blur();
+                    document.getElementById("startChat").disabled = true;
+                    document.getElementById("firstName").disabled = true;
+                    document.getElementById("username").disabled = true;
+                    $("#nav").css("width", "1063");
+                    $('#chatWrapper').hide();
+                    $("#section-chat").show("slide");
+                    $("#section-chat").draggable({
+                        handle: ".header-wrapper"
+                    });
+                    $("#divSpinner").delay(310).fadeIn();
+                }
+
+            });
+        });
+    </script>
     <div class="hero">
       <div class="links">
         <ul class="links-ul">
@@ -347,6 +412,7 @@
           </li>
         </ul>
       </div>
+      <div id='amazon-chat'></div>
     </div>
   </body>
 </html>
