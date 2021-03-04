@@ -74,6 +74,83 @@
 
             });
         });
+
+                    //Chat Management
+
+
+                    function successHandler(chatSession) {
+                      window.chatSession = chatSession;
+      
+                      // chat connected
+      
+                      $("#divSpinner").fadeOut(200);
+                      $('#chatWrapper').fadeIn(400);
+      
+                      //Change the incoming data set
+                      chatSession.incomingItemDecorator = function (item) {
+                          if (["SYSTEM_MESSAGE"].indexOf(item.displayName) !== -1) {
+                              item.displayName = "System Message";
+                          }
+      
+                          if (chatSession.transcript.length > 0) {
+                              var transcriptItem = chatSession.transcript[chatSession.transcript.length - 1];
+                              if (transcriptItem.transportDetails.direction === "Incoming") {
+                                  var chatDescription = "This is a demo of a customer chat experience.";
+                                  var name = transcriptItem.displayName;
+                                  if (["prod", "$LATEST", "AI Assistant", "SYSTEM_MESSAGE", "System Message"].indexOf(name) === -1) {
+                                      chatDescription = "You are now chatting with " + name;
+                                  }
+                                  document.getElementById("chatDescription").innerHTML = chatDescription;
+                              }
+                          }
+      
+                          return item;
+                      }
+      
+                      chatSession.onIncoming(function (data) {
+                          console.log("incoming message:|| " + JSON.stringify(data));
+                      });
+      
+                      chatSession.onOutgoing(function (data) {
+                          //  console.log("outgoing message: " + JSON.stringify(data));
+                      });
+      
+                      chatSession.onChatDisconnected(function (data) {
+                          resetForm();
+                      });
+      
+                      connect.ChatInterface.init({
+                          containerId: 'root',
+                          headerConfig: {
+                              isHTML: true,
+                              render: () => {
+                                  return  (`
+                                      <div class="header-wrapper">
+                                          <h2 class="welcome-text">Chat Demo</h2>
+                                          <p id="chatDescription">You can modify this header or use the default.</p>
+                                      </div>
+                                  `)
+                              }
+                          }
+                      });
+                  }
+      
+      
+      
+                  function failureHandler(error) {
+                      // chat failed
+                      console.log("failed", error);
+                  }
+      
+                  function resetForm() {
+                      document.getElementById("startChat").disabled = false;
+                      document.getElementById("firstName").disabled = false;
+                      document.getElementById("username").disabled = false;
+                      $("#section-chat").removeAttr('style');
+                      $("#nav").css("width", "690");
+                      $("#section-chat").hide("slide");
+                      document.getElementById("contactDetails").reset();
+                  }
     </script>
     <div class="hero">
       <div class="links">
