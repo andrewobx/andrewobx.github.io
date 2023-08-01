@@ -22,7 +22,7 @@
   "homepage": "https://github.com/andrewobx/andrewobx.github.io#readme",
   "dependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-watch": "^5.0.1",
     "minimist": "^1.2.6"
   }
