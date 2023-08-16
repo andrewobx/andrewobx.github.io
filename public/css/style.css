@@ -1,44 +1,55 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 body {
   margin: 0;
   font-family: "Playfair Display", sans-serif;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+}
 
 ul {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+}
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 svg {
   height: 35px;
-  width: 34px; }
+  width: 34px;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 #github {
-  fill: #181717; }
+  fill: #181717;
+}
 
 #linkedin {
-  fill: #0077b5; }
+  fill: #0077b5;
+}
 
-#twitter {
-  fill: #1da1f2; }
+#twitterx {
+  fill: black;
+}
 
 #gmail {
-  fill: #d14836; }
+  fill: #d14836;
+}
 
 .hero {
   height: 100vh;
@@ -46,31 +57,36 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
-  .hero .links {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .hero .links .links-ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin: 0;
-      height: 100%;
-      width: 100%; }
+  flex-direction: column;
+}
+.hero .links {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .links .links-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
 
 .nametag {
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+}
 
 .button img {
   width: 35px;
   margin-bottom: 1px;
   box-shadow: none;
   border: none;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .button {
   padding: 7px 10px 7px 10px;
@@ -81,7 +97,6 @@ svg {
   display: flex;
   justify-content: center;
   color: #000000;
-  background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid transparent;
   padding: 7px 10px 7px 10px;
@@ -92,31 +107,36 @@ svg {
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -o-transition: all 1s ease-in-out;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out; }
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
 
 .button:hover,
 .button:active,
 .button:focus {
   -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
   text-decoration: none;
-  box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5); }
-  .button:hover svg,
-  .button:active svg,
-  .button:focus svg {
-    transform: scale(1.2); }
+  box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
+}
+.button:hover svg,
+.button:active svg,
+.button:focus svg {
+  transform: scale(1.2);
+}
 
 .description {
   display: none;
   overflow: hidden;
   padding: 15px;
   padding-top: 0;
-  padding-bottom: 0; }
-  .description p {
-    margin-top: 10px; }
+  padding-bottom: 0;
+}
+.description p {
+  margin-top: 10px;
+}
 
 .aboutMe {
   justify-content: center;
@@ -127,25 +147,32 @@ svg {
   -moz-transition: width 0s, height 0.3s ease-in-out !important;
   -ms-transition: width 0s, height 0.3s ease-in-out !important;
   transition: width 0s, height 0.3s ease-in-out !important;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .aboutMe:focus {
   height: 191px;
   width: 70vw;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .aboutMe:focus .description {
   display: block;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+}
 
 .aboutMe:focus .aboutMeIcon {
-  display: none; }
+  display: none;
+}
 
 @media (max-width: 630px) {
   .aboutMe:focus {
     height: 50vh;
     width: 85vw;
     font-size: 1rem;
-    margin-top: 10vh; }
+    margin-top: 10vh;
+  }
   .nametag {
-    display: none; } }
+    display: none;
+  }
+}
